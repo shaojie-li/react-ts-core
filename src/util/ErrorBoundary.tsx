@@ -3,8 +3,6 @@ import {connect, DispatchProp} from "react-redux";
 import {ReactLifecycleException} from "../Exception";
 import {errorAction} from "../reducer";
 
-import "./error_boundary.less";
-
 interface OwnProps {
     render: (exception: ReactLifecycleException) => React.ReactNode;
     children: React.ReactNode;
