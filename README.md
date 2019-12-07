@@ -1,4 +1,7 @@
 ## 简介
+[![Build Status](https://travis-ci.org/shaojie-li/react-ts-core.svg?branch=master)](https://travis-ci.org/shaojie-li/react-ts-core)
+[![npm version](https://badge.fury.io/js/react-ts-core.svg)](https://badge.fury.io/js/react-ts-core)
+[![Coverage Status](https://coveralls.io/repos/github/shaojie-li/react-ts-core/badge.svg)](https://coveralls.io/github/shaojie-li/react-ts-core)
 
 react-ts-core 是一个基于 react、redux、typescript 的前端开发框架。
 
