@@ -8,4 +8,4 @@ install:
 
 script:
 - yarn build
-- yarn jest --coverage --coverageReporters=text-lcov | coveralls
+- yarn jest --config node/jest.json --coverage --coverageReporters=text-lcov | coveralls
