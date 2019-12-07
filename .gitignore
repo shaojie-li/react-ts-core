@@ -12,6 +12,7 @@ node_modules
 npm-debug.log
 .DS_Store
 yarn.lock
+package-lock.json
 yarn-error.log
 build
 coverage
