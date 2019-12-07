@@ -1,0 +1,78 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "stylelint.config": {
+        "extends": "stylelint-config-standard",
+        "rules": {
+            "no-descending-specificity": null,
+            "indentation": [4],
+            "declaration-block-trailing-semicolon": null
+        }
+    },
+    "editor.formatOnSave": true,
+    "emmet.triggerExpansionOnTab": true,
+    "prettier.ignorePath": ".prettierignore",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "cSpell.enabledLanguageIds": [
+        "asciidoc",
+        "c",
+        "cpp",
+        "csharp",
+        "css",
+        "go",
+        "handlebars",
+        "html",
+        "jade",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc",
+        "latex",
+        "less",
+        "classname",
+        "markdown",
+        "php",
+        "plaintext",
+        "pug",
+        "python",
+        "restructuredtext",
+        "rust",
+        "scala",
+        "scss",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yaml",
+        "yml",
+        "spid"
+    ],
+    "cSpell.language": "en",
+    "cSpell.words": [
+        "antd",
+        "authid",
+        "devtools",
+        "getprototypeof",
+        "lifecycle",
+        "mutex",
+        "onunhandledrejection",
+        "polyfill",
+        "retcode",
+        "siemin",
+        "unmount"
+    ],
+    "cSpell.ignoreWords": [
+        "appid",
+        "authids",
+        "mchsource",
+        "mchtype",
+        "popconfirm",
+        "retmsg"
+    ]
+}

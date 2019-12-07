@@ -1,0 +1,6 @@
+*.js text eol=crlf
+*.jsx text eol=crlf
+*.css text eol=crlf
+*.sass text eol=crlf
+*.scss text eol=crlf
+*.html text eol=crlf
