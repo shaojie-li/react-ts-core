@@ -1,6 +1,6 @@
 {
   "name": "react-ts-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,7 @@
   "author": "shaojie.li",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/shaojie-li/react-ts-core"
   },
   "scripts": {
     "build": "node node/build.js",
