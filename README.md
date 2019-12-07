@@ -33,6 +33,7 @@ redux 数据处理
 ## 用法
 
 待完成，等有时间会用 vuePress 出一个在线文档。
+写了一个demo可供参考 https://github.com/shaojie-li/react-ts-core-demo
 
 ## 参考
 
