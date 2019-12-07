@@ -4,7 +4,6 @@ node_js:
 cache: yarn
 install:
 - yarn install
-- yarn global add node-coveralls
 
 script:
 - yarn build
