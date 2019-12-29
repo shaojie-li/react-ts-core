@@ -4,7 +4,7 @@ export {startApp} from "./platform/Bootstrap";
 export {Module} from "./platform/Module";
 
 export {async} from "./util/async";
-export {ajax} from "./util/network";
+export {ajax, cancelAjax} from "./util/network";
 export {call} from "./util/sagaCall";
 export {ErrorBoundary} from "./util/ErrorBoundary";
 export {Route} from "./util/Route";

@@ -1,7 +1,11 @@
-import axios, {AxiosError, AxiosRequestConfig, Method, AxiosResponse} from "axios";
+import axios, {AxiosError, AxiosRequestConfig, Method, AxiosResponse, Canceler} from "axios";
 
-import {APIException, NetworkConnectionException} from "../Exception";
+import {APIException, NetworkConnectionException, BizException} from "../Exception";
 import {parseWithDate} from "./json";
+
+const CancelToken = axios.CancelToken;
+
+let cancelAjax: Canceler;
 
 axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
@@ -28,6 +32,9 @@ axios.defaults.transformResponse = (data, headers) => {
 axios.interceptors.response.use(
     response => response,
     (error: AxiosError) => {
+        if (!error.config) {
+            throw new BizException("取消请求");
+        }
         const url = error.config.url!;
         if (error.response) {
             const responseData = error.response.data;
@@ -37,18 +44,24 @@ axios.interceptors.response.use(
             const errorCode = responseData && responseData.errorCode ? responseData.errorCode : null;
 
             if (!errorId && (error.response.status === 502 || error.response.status === 504)) {
-                throw new NetworkConnectionException(`gateway error (${error.response.status})`, url);
+                throw new NetworkConnectionException(`服务端错误 - ${error.response.status}`, url);
             } else {
                 throw new APIException(errorMessage, error.response.status, url, responseData, errorId, errorCode);
             }
         } else {
-            throw new NetworkConnectionException(`failed to connect to ${url}`, url);
+            throw new NetworkConnectionException(`请求错误 - ${url}`, url);
         }
     }
 );
 
-export async function ajax<Request, Response>(method: Method, path: string, pathParams: object, request?: Request): Promise<AxiosResponse<Response>> {
-    const config: AxiosRequestConfig = {method, url: url(path, pathParams)};
+export async function ajax<Request, Response>(method: Method, path: string, pathParams: object, request: Request): Promise<AxiosResponse<Response>> {
+    const config: AxiosRequestConfig = {
+        method,
+        url: url(path, pathParams),
+        cancelToken: new CancelToken(function executor(c) {
+            cancelAjax = c;
+        }),
+    };
 
     if (method === "GET" || method === "DELETE") {
         config.params = request;
@@ -71,3 +84,5 @@ export function url(pattern: string, params: object): string {
     });
     return url;
 }
+
+export {cancelAjax};
