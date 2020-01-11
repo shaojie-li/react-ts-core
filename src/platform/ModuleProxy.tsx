@@ -1,6 +1,8 @@
 import React from "react";
 import {RouteComponentProps} from "react-router";
-import {SagaIterator, Task} from "redux-saga";
+import {Task} from "redux-saga";
+import {SagaIterator} from "../typed-saga";
+
 import {delay} from "redux-saga/effects";
 
 import {app} from "../app";

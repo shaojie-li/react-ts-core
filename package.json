@@ -1,6 +1,6 @@
 {
     "name": "react-ts-core",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "main": "lib/index.js",
     "module": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -27,7 +27,7 @@
         "ts-node": "8.5.2",
         "tslint": "5.20.1",
         "tslint-react": "4.1.0",
-        "typescript": "3.5.3",
+        "typescript": "3.7.4",
         "yargs": "15.0.1"
     },
     "dependencies": {

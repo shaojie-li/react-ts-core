@@ -1,4 +1,4 @@
-import {SagaIterator} from "redux-saga";
+import {SagaIterator} from "./typed-saga";
 import {put} from "redux-saga/effects";
 import {app} from "./app";
 import {Exception} from "./Exception";
